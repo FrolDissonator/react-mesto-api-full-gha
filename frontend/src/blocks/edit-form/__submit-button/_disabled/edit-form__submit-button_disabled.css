@@ -1,0 +1,10 @@
+.edit-form__submit-button_disabled {
+  background-color: #FFFFFF;
+  color: #C4C4C4;
+  border: 1px solid #C4C4C4;
+  cursor: not-allowed;
+}
+
+.edit-form__submit-button_disabled:hover {
+  opacity: 1;
+}

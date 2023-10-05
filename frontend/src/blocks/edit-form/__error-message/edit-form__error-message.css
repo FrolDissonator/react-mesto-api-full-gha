@@ -1,0 +1,6 @@
+.edit-form__error-message {
+  color: #FF0000;
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 400;
+}
