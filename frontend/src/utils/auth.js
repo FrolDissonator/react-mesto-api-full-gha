@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:3000"
+const baseUrl = "https://api.dissonator.students.nomoredomainsrocks.ru"
 
 const checkResponse = (response) => {
   if (response.ok) {
