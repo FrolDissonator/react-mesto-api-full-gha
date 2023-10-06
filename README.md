@@ -16,7 +16,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 84.201.155.9
+IP 84.201.155.9
 
 Frontend https://dissonator.students.nomoredomainsrocks.ru
 
