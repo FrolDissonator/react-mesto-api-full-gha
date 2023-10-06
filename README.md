@@ -6,13 +6,13 @@
 Адрес репозитория: https://github.com/FrolDissonator/react-mesto-api-full-gha
 
 ## Технологии
-JavaScript
-React
-JSON
-CSS
-HTML
-NodeJS
-Express
+* JavaScript
+* React
+* JSON
+* CSS
+* HTML
+* NodeJS
+* Express
 
 ## Ссылки на проект
 
@@ -21,3 +21,6 @@ IP-адрес 84.201.155.9
 Frontend https://dissonator.students.nomoredomainsrocks.ru
 
 Backend https://api.dissonator.students.nomoredomainsrocks.ru
+
+### Автор
+Сергей Фролов
