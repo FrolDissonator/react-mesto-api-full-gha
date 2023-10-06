@@ -3,6 +3,7 @@ const ApiError = require('../errors/ApiError');
 
 module.exports = (req, res, next) => {
   const { authorization } = req.headers;
+  const { NODE_ENV = 'production', JWT_SECRET = 'dev-secret' } = process.env;
 
   if (!authorization || !authorization.startsWith('Bearer ')) {
     throw ApiError.unauthorized('Необходима авторизация');
@@ -12,7 +13,7 @@ module.exports = (req, res, next) => {
   let payload;
 
   try {
-    payload = jwt.verify(token, 'some-secret-key');
+    payload = jwt.verify(token, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret');
   } catch (err) {
     throw ApiError.unauthorized('Некорректный токен');
   }

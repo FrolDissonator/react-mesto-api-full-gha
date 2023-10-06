@@ -1,4 +1,3 @@
-const { NODE_ENV, JWT_SECRET } = process.env;
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const User = require('../models/user');
@@ -6,6 +5,7 @@ const ApiError = require('../errors/ApiError');
 
 module.exports.login = async (req, res, next) => {
   const { email, password } = req.body;
+  const { NODE_ENV = 'production', JWT_SECRET = 'dev-secret' } = process.env;
 
   try {
     const user = await User.findUserByCredentials(email, password);
