@@ -3,7 +3,7 @@ const ApiError = require('../errors/ApiError');
 
 module.exports.getCards = async (req, res, next) => {
   try {
-    const cards = await Card.find();
+    const cards = await Card.find({}).sort({ createdAt: -1 });
     res.status(200).send(cards);
   } catch (err) {
     next(ApiError.internal('Ошибка сервера'));
@@ -43,10 +43,6 @@ module.exports.deleteCard = async (req, res, next) => {
     }
 
     const deletedCard = await Card.deleteOne(card);
-
-    if (!deletedCard) {
-      return next(ApiError.notFound('Карточка не найдена'));
-    }
 
     res.status(200).send({ data: deletedCard });
   } catch (err) {

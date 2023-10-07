@@ -10,10 +10,6 @@ module.exports.login = async (req, res, next) => {
   try {
     const user = await User.findUserByCredentials(email, password);
 
-    if (!user) {
-      return next(ApiError.notFound('Пользователь не найден'));
-    }
-
     const token = jwt.sign(
       { _id: user._id },
       NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret',

@@ -22,8 +22,10 @@ const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 100,
 });
-app.use(limiter);
 const port = 3000;
+
+app.use(requestLogger);
+app.use(limiter);
 
 app.use(helmet());
 app.use(checkCors);
@@ -31,8 +33,6 @@ app.use(checkCors);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
-
-app.use(requestLogger);
 
 app.get('/crash-test', () => {
   setTimeout(() => {
